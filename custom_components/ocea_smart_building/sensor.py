@@ -11,7 +11,10 @@ from homeassistant.components.sensor import (
     SensorStateClass,
 )
 from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import UnitOfVolume
+from homeassistant.const import (
+    UnitOfVolume,
+    UnitOfEnergy
+)
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers.update_coordinator import CoordinatorEntity
@@ -50,6 +53,17 @@ SENSOR_TYPES: tuple[OceaSensorEntityDescription, ...] = (
         icon="mdi:water-thermometer",
         suggested_display_precision=2,
     ),
+    OceaSensorEntityDescription(
+        key="cetc",
+        data_key="cetc",
+        translation_key="cetc",
+        name="Thermique chaud",
+        native_unit_of_measurement=UnitOfEnergy.KILO_WATT_HOUR,
+        device_class=SensorDeviceClass.ENERGY,
+        state_class=SensorStateClass.TOTAL_INCREASING,
+        icon="mdi:lightning-bolt-outline",
+        suggested_display_precision=2,
+    )
 )
 
 
