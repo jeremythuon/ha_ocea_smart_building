@@ -63,7 +63,7 @@ SENSOR_TYPES: tuple[OceaSensorEntityDescription, ...] = (
         state_class=SensorStateClass.TOTAL_INCREASING,
         icon="mdi:lightning-bolt-outline",
         suggested_display_precision=2,
-    )
+    ),
 )
 
 
